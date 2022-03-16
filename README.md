@@ -1,1 +1,1 @@
-# gmail-lang-cm-editor
+### Code mirror editor for gmail query language
