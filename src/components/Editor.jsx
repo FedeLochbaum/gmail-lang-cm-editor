@@ -1,6 +1,8 @@
 import React, { useMemo, useRef, useState } from 'react'
 import { basicSetup } from '@codemirror/basic-setup'
 import { Gmail } from 'gmail-lang'
+import theme from '../extensions/Theme'
+import linter from '../extensions/Linter'
 import CodeMirror from 'rodemirror'
 
 const style = {
@@ -13,13 +15,13 @@ const noop = () => {}
 
 export const Editor = ({ value = '', setValue = noop, externalExtensions = [] }) => {
   const editorView = useRef()
-  debugger
   const [writeValue] = useState(value)
 
   const extensions = useMemo(() => [
     basicSetup,
     Gmail(externalExtensions),
-    // linter(expectedType, withSyntheticMatch, linterEnabled, store),
+    theme,
+    linter
   ], [externalExtensions])
 
   return (<CodeMirror

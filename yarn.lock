@@ -5653,10 +5653,10 @@ globrex@^0.1.2:
   resolved "https://registry.yarnpkg.com/globrex/-/globrex-0.1.2.tgz#dd5d9ec826232730cd6793a5e33a9302985e6098"
   integrity sha512-uHJgbwAMwNFf5mLst7IWLNg14x1CkeqglJb/K3doi4dw6q2IvAAmM/Y81kevy83wP+Sst+nutFTYOGg3d1lsxg==
 
-gmail-lang@^0.1.2:
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/gmail-lang/-/gmail-lang-0.1.2.tgz#afc82942117f0edd58d5537e5b28044dcd0bd42c"
-  integrity sha512-GKEkOHnVT0jK3smt23KJc5m1T7wD+sFL19gG+U7wcpfYuB01p4q/tLLZQNVuh9O3XIQMWb6nL84ksJdY8pzJfg==
+gmail-lang@^0.1.4:
+  version "0.1.4"
+  resolved "https://registry.yarnpkg.com/gmail-lang/-/gmail-lang-0.1.4.tgz#ae1a3d6afb511f0e55c98e18182494f317e4525a"
+  integrity sha512-gkW0VLFZkhIMTsW1wjs4lhi4xH0mU/icMtnhIJxu30M+zLeH6xW0wiYzolK9Y71rPhwQGRG9ZfdSvsLHIXGNGg==
   dependencies:
     "@codemirror/highlight" "^0.19.0"
     "@codemirror/language" "^0.19.0"
@@ -8261,6 +8261,11 @@ raf@^3.4.1:
   integrity sha512-Sq4CW4QhwOHE8ucn6J34MqtZCeWFP2aQSmrlroYgqAV1PjStIhJXxYuTgUIfkEk7zTLjmIjLmU5q+fbD1NnOJA==
   dependencies:
     performance-now "^2.1.0"
+
+ramda@^0.28.0:
+  version "0.28.0"
+  resolved "https://registry.yarnpkg.com/ramda/-/ramda-0.28.0.tgz#acd785690100337e8b063cab3470019be427cc97"
+  integrity sha512-9QnLuG/kPVgWvMQ4aODhsBUFKOUmnbUnsSXACv+NCQZcHbeb+v8Lodp8OVxtRULN1/xOyYLLaL6npE6dMq5QTA==
 
 randombytes@^2.1.0:
   version "2.1.0"
