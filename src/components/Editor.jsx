@@ -5,13 +5,13 @@ import theme from '../extensions/Theme'
 import linter from '../extensions/Linter'
 import CodeMirror from 'rodemirror'
 
+const noop = () => {}
+
 const style = {
   display: 'flex',
   flexDirection: 'column',
   flex: '1 0 auto'
 }
-
-const noop = () => {}
 
 export const Editor = ({ value = '', setValue = noop, externalExtensions = [] }) => {
   const editorView = useRef()

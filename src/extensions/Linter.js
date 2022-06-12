@@ -8,8 +8,6 @@ const syntaxErrorCheck = () => {
 
   const _check = ({ type, from, to, node }) => {
     if (type.isError) {
-      console.log('type, from, to: ', type, from, to)
-      console.log('node: ', node)
       diagnostics.push({
         from,
         to,

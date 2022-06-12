@@ -9,3 +9,28 @@ export const analyzeAST = (tree, checks = []) => {
 
   return chain(prop('diagnostics'), checks)
 }
+
+export const keywords = [
+  'from',
+  'to',
+  'cc',
+  'bcc',
+  'label',
+  'subject',
+  'has',
+  'is',
+  'category',
+  'filename',
+  'after',
+  'before',
+  'older',
+  'newer',
+  'newer_than',
+  'older_than',
+  'deliveredto',
+  'list',
+  'in',
+  'size',
+  'larger',
+  'smaller'
+]
