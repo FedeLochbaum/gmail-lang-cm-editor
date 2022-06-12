@@ -1,6 +1,12 @@
 {
   "name": "gmail-lang-cm-editor",
-  "version": "0.1.0",
+  "version": "0.1.1",
+  "description": "CodeMirror editor for gmail query language",
+  "author": "Federico Javier Lochbaum <federico.lochbaum@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FedeLochbaum/gmail-lang-cm-editor.git"
+  },
   "private": true,
   "dependencies": {
     "@codemirror/basic-setup": "^0.19.1",
