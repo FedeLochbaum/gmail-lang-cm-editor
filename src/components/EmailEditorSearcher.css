@@ -1,3 +1,21 @@
+.Component {
+  display: flex;
+  flex-direction: row;
+}
+
+.Editor {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.Ast {
+  display: flex;
+  padding-left: 1rem;
+  font-family: monospace;
+  flex: 1;
+}
+
 .EmailsContainer {
   display: flex;
   padding-top: 1rem;

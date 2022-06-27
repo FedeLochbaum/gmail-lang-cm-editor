@@ -74,3 +74,4 @@ export const EditorWithSimpleQuery = () => <Editor value={'is:important bla'}/>
 export const EditorWithComplexQuery = () => <Editor value={'is:important AND (label:important OR larger:10M) matchLabel'}/>
 export const EditorWithAutocomplete = () => <Editor value={''} externalExtensions={[autocomplete]}/>
 export const EditorWithEvaluation = () => <EmailEditorSearcher source={''} dataSource={dataSource(emails)} />
+export const EditorWithEvaluationAndAST = () => <EmailEditorSearcher source={''} dataSource={dataSource(emails)} withAST />

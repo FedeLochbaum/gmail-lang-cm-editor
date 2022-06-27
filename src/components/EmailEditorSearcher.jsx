@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from 'react'
 import autocomplete from '../extensions/Autocomplete'
-import { evalLangQuery } from 'gmail-lang'
+import { evalLangQuery, sourceToQuery } from 'gmail-lang'
 import { Editor } from './Editor'
 
 import './EmailEditorSearcher.css'
@@ -20,19 +20,23 @@ const Email = ({ email: {subject, body, from, to } }) => (<div
     <div key={body} className={'EmailRow'}>
       <span className="Title">Body:</span> {body}
     </div>
-  {body}
 </div>)
 
-const EmailEditorSearcher = ({ source, dataSource }) => {
+const EmailEditorSearcher = ({ source, dataSource, withAST = false }) => {
   const [value, setValue] = useState(source)
   const emails = useMemo(() => evalLangQuery(value, dataSource) || [], [value, dataSource])
 
   return (
-    <div>
-      <Editor value={value} externalExtensions={[autocomplete]} setValue={setValue} />
-      <div className={'EmailsContainer'}>
-        {emails.map((email, i) => <Email key={i} email={email}/>)}
+    <div className="Component">
+      <div className="Editor">
+        <Editor value={value} externalExtensions={[autocomplete]} setValue={setValue} />
+        <div className={'EmailsContainer'}>
+          {emails.map((email, i) => <Email key={i} email={email}/>)}
+        </div>
       </div>
+      {withAST && <div className={'Ast'}>
+        {value? <pre>{JSON.stringify(sourceToQuery(value), null, 2) }</pre> : null}
+      </div>}
     </div>
   )
 }
