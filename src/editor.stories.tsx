@@ -2,7 +2,7 @@ import * as React from "react"
 import { Editor } from "./components/Editor"
 import EmailEditorSearcher from "./components/EmailEditorSearcher"
 import autocomplete from "./extensions/Autocomplete"
-import { difference, union, intersection, isNil } from 'ramda'
+import { difference, union, intersection, isNil, prop } from 'ramda'
 
 const emails = [
   {
@@ -47,12 +47,26 @@ const matchs = label => ({ subject, body, from, to }) =>
   matchWithLabel(from, label) ||
   matchWithLabel(to, label)
 
+const filterByProp = _prop => (_emails, _value) =>
+  _emails.filter(email => matchWithLabel(prop(_prop, email), _value))
+
+const EMAILS_BY_KEYWORD = {
+  FROM: filterByProp('from'),
+  TO: filterByProp('to'),
+  SUBJECT: filterByProp('subject'),
+  BODY: filterByProp('body')
+}
+
 const dataSource = emails => ({
-  allByKeyword: (keyword, value) => emails, // TODO
+  allByKeyword: (keyword, value) => {
+    if (!keyword || !value || !(EMAILS_BY_KEYWORD[keyword?.type])) return emails
+    
+    return EMAILS_BY_KEYWORD[keyword.type](emails, value)
+  },
   filterByMatch: (filteredEmails, filter) => (filteredEmails || []).filter(matchs(filter)),
-  intersection,
-  union,
-  difference,
+  intersection: (array1, array2) => intersection(array1 || [], array2 || []),
+  union: (array1, array2) => union(array1 || [], array2 || []),
+  difference: (array1, array2) => difference(array1 || [], array2 || []),
 })
 
 export const EmptyEditor = () => <Editor value={''}/>
