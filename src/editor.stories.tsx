@@ -49,7 +49,7 @@ const matchs = label => ({ subject, body, from, to }) =>
 
 const dataSource = emails => ({
   allByKeyword: (keyword, value) => emails, // TODO
-  filterByMatch: (filteredEmails, filter) => filteredEmails.filter(matchs(filter)),
+  filterByMatch: (filteredEmails, filter) => (filteredEmails || []).filter(matchs(filter)),
   intersection,
   union,
   difference,
