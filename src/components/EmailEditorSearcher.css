@@ -1,0 +1,47 @@
+.Component {
+  display: flex;
+  flex-direction: row;
+}
+
+.Editor {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.Ast {
+  display: flex;
+  padding-left: 1rem;
+  font-family: monospace;
+  flex: 1;
+}
+
+.EmailsContainer {
+  display: flex;
+  padding-top: 1rem;
+  flex-direction: column;
+}
+
+.Title {
+  display: flex;
+  font-weight: bold;
+  padding-right: 0.5rem;
+}
+
+.Email {
+  display: flex;
+  flex-direction: column;
+  font-family: monospace;
+  padding-bottom: 1rem;
+  padding-top: 0.5rem;
+  padding-left: 1rem;
+  background-color: rgb(244, 244, 244);
+  border-radius: 10px;
+  border: 3px white solid !important;
+  border-block: inherit;
+}
+
+.EmailRow {
+  display: flex;
+  padding-top: 0.5rem;
+}
