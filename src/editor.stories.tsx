@@ -9,13 +9,13 @@ const emails = [
     subject: 'Email 1',
     body: 'Hi, I am Pepe',
     from: 'pepe@pepe.pepe.com',
-    to: 'fede@fede.com',
+    to: 'federico.lochbaum@gmail.com',
     timestamp: '2019-07-19T15:00:49',
   },
   {
     subject: 'Email 2',
     body: 'Hello! nice to meet you pepe',
-    from: 'fede@fede.com',
+    from: 'federico.lochbaum@gmail.com',
     to: 'pepe@pepe.pepe.com',
     timestamp: '2022-06-20T22:05:00',
   },
@@ -29,10 +29,17 @@ const emails = [
     timestamp: '2022-01-10T22:22:17',
   },
   {
-    subject: 'Sir X',
+    subject: 'Email 4',
+    body: `This is an email from federico.lochbaum@gmail.com to pepe@pepe.pepe.com`,
+    from: 'federico.lochbaum@gmail.com',
+    to: 'pepe@pepe.pepe.com',
+    timestamp: '2022-01-10T22:22:17',
+  },
+  {
+    subject: 'Phd in France',
     body: `Hi Federico,
     
-    We will surely meet by person to speak about the possibility to make a PhD in France`,
+    We will surely meet by person to speak about the possibility to make a PhD in France...`,
     from: 'sirx@gmail.com',
     to: 'federico.lochbaum@gmail.com',
     timestamp: '2017-02-11T22:18:54',
@@ -63,7 +70,7 @@ const dataSource = emails => ({
     
     return EMAILS_BY_KEYWORD[keyword.type](emails, value)
   },
-  filterByMatch: (filteredEmails, filter) => (filteredEmails || []).filter(matchs(filter)),
+  filterByMatch: (filteredEmails, filter) => (filteredEmails || emails).filter(matchs(filter)),
   intersection: (array1, array2) => intersection(array1 || [], array2 || []),
   union: (array1, array2) => union(array1 || [], array2 || []),
   difference: (array1, array2) => difference(array1 || [], array2 || []),
